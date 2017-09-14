@@ -15,12 +15,23 @@
 
         <div class="table_child">
 
-          <h2>{{place.name_of_establishment}}</h2>
+          <h2 style = "margin-bottom: 30px;">{{place.name_of_establishment}}</h2>
+
+          <h4 style = "margin-bottom: 30px;">{{place.plank_clue}}</h4>
+          <h4>{{place.plank_prompt}}</h4>
 
           <form method="post">
             {% csrf_token %}
-            {{ clueform.answer|add_class:"form-control"}}
-            <input class="btn btn-success" type="submit" value="submit">
+            {% if place.location_complete %}
+              <fieldset disabled>
+              {{ clueform.answer|add_class:"form-control"}}
+              <input style = "margin-top: 15px;" class="btn btn-success" type="submit" value="Submit">
+              <h4 style="color: #5cb85c; margin-top: 15px;">You got this right!  The answer was {{place.plank_answer}}</h4>
+              </fieldset>
+            {% else %}
+              {{ clueform.answer|add_class:"form-control"}}
+              <input style = "margin-top: 15px;" class="btn btn-success" type="submit" value="Submit">
+            {% endif%}
           </form>
 
 
@@ -30,7 +41,7 @@
 
       <!-- FOOTER AREA for notes-->
       <div class="col-sm-12 subtext_area " style = "background-color: rgba(1, 1, 1, 0.5); color: white; padding-top: 10px;">
-        <p>This is sample text</p>
+        <p>Instructions: {{place.instructions}}</p>
       </div>
 
 

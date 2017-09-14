@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 subpage_div table_parent" style="background-image: url('');
+                                      background-repeat: repeat;
+                                      background-size: cover;">
+
+      <a href="/interface" style="position: absolute; right: 15px; top: 15px;"><img src="{% static 'img/sloth_icon.png' %}" alt="sloth_icon" style="height: 50px;"></a>
+
+
+        <div class="table_child text-center">
+            <h1 style="margin-bottom: 30px;" >Sorry, you missed it <br>:(</h1>
+            <a href="{% url 'questions:place_detail' pk=samepk %}"><button class='btn btn-success'>Doesn't mean you can't try again!</button></a>
+        </div> <!--middle aligned stuff -->
+
+      </div><!--subpage_div-->
+
+      <!-- FOOTER AREA for notes-->
+      <div class="col-sm-12 subtext_area " style = "background-color: rgba(1, 1, 1, 0.5); color: white; padding-top: 10px;">
+        <p>Keep trying, I'm sure you guys can get it.  However, if things get really frustrating, give me a call and I'll help you out.  My number is 202-320-5859.</p>
+      </div>
+
+
+    </div><!-- row -->
+
+
+  </div><!--container -->
+
+{% endblock %}

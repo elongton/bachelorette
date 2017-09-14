@@ -13,38 +13,39 @@
 
 
       <div class="table_child">
-        <div style="margin-top: -60px; margin-bottom: 30px; background-color: rgba(1, 1, 1, 0.5); padding: 10px 10px;">
-          <h1 style="color: white;">Bachelorettes have completed 0%</h1>
+        <div style="margin-top: -60px; margin-bottom: 30px; background-color: rgba(1, 1, 1, 0.5); padding: 10px 10px;" id="percentage_div">
+          <h1 style="color: white;">Bachelorettes have completed {{percentage}}%</h1>
         </div>
 
 
         <div class="btn-group">
           <div style = "margin-right: 20px;" class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="btn btn-secondary dropdown-toggle" href="" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Places
             </a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              {% for place in places %}
+                {% if place.location_complete == True or place.is_current == True%}
+                <a class="dropdown-item" href="{% url 'questions:place_detail' pk=place.place_id %}">{{place.name_of_establishment}}</a>
+                {% endif %}
+              {% endfor %}
 
             </div>
           </div>
-          <a href="" ><button class="btn btn-secondary">Current</button></a>
+
+          <a href="{% url 'questions:place_detail' pk=currentquestion %}" ><button class="btn btn-secondary">Current</button></a>
+          {% if percentage == 100%}
+          <a href="" style="margin-left: 20px;"><button class="btn btn-primary">Bonus</button></a>
+          {%endif%}
         </div><!-- btn-group -->
 
       </div>
 
     </div>
     <div class="col-sm-12 subtext_area " style = "background-color: rgba(1, 1, 1, 0.5); color: white; padding-top: 10px;">
-      <p>This is your dashboard. You can always return to the dashboard to review past questions and see your current percentage.  To return to the dashboard, just tap the sloth.</p>
+      <p style="font-size: 14px;">This is your dashboard. You can always tap the sloth to review past questions and see your current percentage.
+           <br><span style="font-size: 10px;">(1. Sloths are awesome  2. That's why they are here  3. Deal with it.)<span></p>
     </div>
   </div>
 

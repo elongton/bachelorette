@@ -4,11 +4,12 @@ from django.core.urlresolvers import reverse
 
 class Place(models.Model):
     place_id = models.PositiveIntegerField(primary_key=True)
+    next_id = models.PositiveIntegerField(default=0)
     name_of_establishment = models.CharField(max_length=100)
     instructions = models.TextField(default='')
     plank_clue = models.TextField(default='')
+    plank_prompt = models.TextField(default='')
     plank_answer = models.CharField(max_length=100)
-    has_entered_name = models.BooleanField(default=False)
     is_current = models.BooleanField(default=False)
     location_complete = models.BooleanField(default = False)
 
