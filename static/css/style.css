@@ -1,0 +1,13 @@
+.table_parent{display: table}
+.table_child{display: table-cell; vertical-align: middle;}
+.dashed{border: 1px dashed black;}
+
+
+
+.homepage_container{height: 100vh;}
+.homepage_div{height: 100vh;}
+
+
+
+.subpage_div{height: 80vh;}
+.subtext_area{height: 20vh;}

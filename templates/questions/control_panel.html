@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 subpage_div table_parent" style="background-image: url('static/img/baby_sloth.png');
+                                    background-repeat: repeat;
+                                    background-size: cover;">
+
+    <a href="" style="position: absolute; right: 15px; top: 15px;"><img src="{% static 'img/sloth_icon.png' %}" alt="sloth_icon" style="height: 50px;"></a>
+
+
+      <div class="table_child">
+        <div style="margin-top: -60px; margin-bottom: 30px; background-color: rgba(1, 1, 1, 0.5); padding: 10px 10px;">
+          <h1 style="color: white;">Bachelorettes have completed 0%</h1>
+        </div>
+
+
+        <div class="btn-group">
+          <div style = "margin-right: 20px;" class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Places
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+
+            </div>
+          </div>
+          <a href="" ><button class="btn btn-secondary">Current</button></a>
+        </div><!-- btn-group -->
+
+      </div>
+
+    </div>
+    <div class="col-sm-12 subtext_area " style = "background-color: rgba(1, 1, 1, 0.5); color: white; padding-top: 10px;">
+      <p>This is your dashboard. You can always return to the dashboard to review past questions and see your current percentage.  To return to the dashboard, just tap the sloth.</p>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

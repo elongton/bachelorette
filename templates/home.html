@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static%}
+
+{% block content %}
+<div class="container homepage_container" style="
+                                            background-image: url('static/img/girl_collage.jpg');
+                                            background-repeat: repeat;
+                                            background-size: cover;">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 text-center homepage_div table_parent">
+      <div class="table_child">
+        <h1 style="color: white; margin-bottom: 20px;">Welcome to the Bachelorette Party!</h1>
+        <a  href="/interface"><button class="btn btn-success">Start the Journey</button></a>
+        <!-- <img src="{% static 'img/elephant_background.jpg' %}" alt="myelephant"> -->
+
+      </div><!-- table_child-->
+
+    </div><!-- col-sm-12 -->
+  </div><!-- row -->
+
+</div>
+
+
+{% endblock %}
