@@ -3,8 +3,8 @@ from django.core.urlresolvers import reverse
 # Create your models here.
 
 class Place(models.Model):
-    place_id = models.PositiveIntegerField(primary_key=True)
-    next_id = models.PositiveIntegerField()
+    # place_id = models.PositiveIntegerField(primary_key=True)
+    next_id = models.PositiveIntegerField(default=0)
     name_of_establishment = models.CharField(max_length=100)
     instructions = models.TextField(default='')
     plank_clue = models.TextField(default='')
