@@ -13,6 +13,8 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', 'asdfasdff892374923ufa7k7pi9nl^px504su!&^6tg@!kbfme+=k')
 # SECURITY WARNING: don't run with debug turned on in production!
+
+from bachelorette.aws.conf import *
 DEBUG = True
 
 ALLOWED_HOSTS = ['laurax.herokuapp.com']
@@ -28,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
+    'storages',
     'questions',
 ]
 
@@ -117,7 +120,7 @@ USE_TZ = True
 # STATIC_URL = '/static/'
 # STATICFILES_DIRS = [STATIC_DIR,]
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static-root')
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
