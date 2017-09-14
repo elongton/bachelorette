@@ -15,8 +15,8 @@
 
         <div class="table_child text-center">
             <h1 style="margin-bottom: 30px;" >YOU'RE AWESOME!</h1>
-            {% if nextpk == 0 %}
-              <a href="{% url 'questions:place_detail' pk=nextpk %}"><button class='btn btn-success'>Find out where you're going next!</button></a>
+            {% if nextpk == '0' %}
+              <a href="{% url 'questions:thanks_view' %}"><button class='btn btn-success'>You freakn' did it!</button></a>
             {% else %}
               <a href="{% url 'questions:place_detail' pk=nextpk %}"><button class='btn btn-success'>Find out where you're going next!</button></a>
             {% endif %}

@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^place/success/(?P<pk>\d+)/$', views.SuccessView.as_view(), name='success_view'),
     url(r'^place/fail/(?P<pk>\d+)/$', views.FailView.as_view(), name='fail_view'),
     url(r'^thanks/$', views.ThanksView.as_view(), name='thanks_view'),
+    url(r'^bonus/$', views.BonusView.as_view(), name='bonus_view'),
 ]

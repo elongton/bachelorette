@@ -53,9 +53,10 @@ class PlaceDetail(DetailView):
                     place.location_complete = True
                     place.is_current = False
                     place.save()
-                    nextplace = models.Place.objects.get(place_id = place.next_id)
-                    nextplace.is_current = True
-                    nextplace.save()
+                    if place.next_id != 0:
+                        nextplace = models.Place.objects.get(place_id = place.next_id)
+                        nextplace.is_current = True
+                        nextplace.save()
                     return HttpResponseRedirect(reverse("questions:success_view", kwargs={'pk':place.next_id}))
                 else:
                     return HttpResponseRedirect(reverse("questions:fail_view", kwargs={'pk':place.place_id}))
@@ -87,3 +88,8 @@ class FailView(TemplateView):
 
 class ThanksView(TemplateView):
     template_name = 'questions/thanks.html'
+
+
+
+class BonusView(TemplateView):
+    template_name = 'questions/bonus.html'

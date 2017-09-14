@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 subpage_div table_parent" style="background-image: url('/static/img/slothlove.jpg');
+                                      background-repeat: repeat;
+                                      background-size: cover;
+                                      background-position: center;
+                                      height: 100vh;">
+
+      <a href="/interface" style="position: absolute; right: 15px; top: 15px;"><img src="{% static 'img/sloth_icon.png' %}" alt="sloth_icon" style="height: 50px;"></a>
+
+
+        <div class="table_child">
+          <div id="percentage_div" style="background-color: rgba(1, 1, 1, 0.4); padding: 10px 10px;">
+            <h4 style="color: white;">Here's a couple more things to do:</h4>
+            <ul style="color: white;">
+              <li>There's a dog petting event at Ellwood Thompson @ 5pm (call them before you go and confirm)</li>
+              <li>Swing by "The Daily" for some awesome cocktails.</li>
+              <li>Tons of clothing places including "Trend", "Phoenix",  "Lex's", and "Vintage Clothing".</li>
+              <li>Check out the Chop Suey book shop! (I'll say they don't have much of a mythology collection though)</li>
+              <li>Visit "Cool Colors Gallery" for some interesting bird artwork.</li>
+            </ul>
+          </div>
+
+
+        </div> <!--middle aligned stuff -->
+
+      </div><!--subpage_div-->
+
+
+    </div><!-- row -->
+
+
+  </div><!--container -->
+
+{% endblock %}
