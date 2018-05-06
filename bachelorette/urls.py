@@ -19,9 +19,11 @@ from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic.base import TemplateView
+from global_funcs import views as globalfuncviews
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name='home.html')),
     url(r'',include('questions.urls', namespace='questions')),
+    url(r'^reset/', globalfuncviews.reset_app, name ='reset_app'),
 ]
